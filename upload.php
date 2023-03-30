@@ -1,31 +1,42 @@
 <?php
-include('painel.php');
 
-// Configuração de conexão FTP
-$ftp_server = "ftpupload.net";
-$ftp_username = "epiz_33867279";
-$ftp_password = "U611KqcRxWE6";
+$arquivos = $_FILES['file'];
+$names = $arquivos['name'];
+$tmp_name = $arquivos['tmp_name'];
 
-// Conexão com FTP
-$conn_id = ftp_connect($ftp_server) or die("Não foi possível estabeler uma conexão com o servidor!");
-
-// Login no FTP
-$login_result = ftp_login($conn_id, $ftp_username, $ftp_password);
-
-// Arquivo local para upload
-$local_file = $arquivo;
-
-// Arquivo remoto para upload
-$remote_file = "CLOUD";
-
-// Upload do Arquivo
-if(ftp_put($conn_id, $remote_file, $local_file, FTP_ASCII)) {
-    echo "Arquivo enviado com sucesso!";
-}
-else {
-    echo "Erro ao enviar arquivo";
+foreach ($names as $index => $name) {
+    $extension = pathinfo($name, PATHINFO_EXTENSION);
+    $newNome = uniqid().'.'.$extension;
+    move_uploaded_file($tmp_name[$index],'$remote_file_path'.$newNome);
 }
 
-// Finalizando a conexão com o servidor FTP
-ftp_close($conn_id);
-?>
+//Configurações de conexão FTP
+$ftp_server = 'ftp.bistec.com.pt';
+$ftp_username = 'web@bistec.com.pt';
+$ftp_password = '@bart7931';
+
+//Conectando ao servidor FTP
+$ftp_connection = ftp_connect($ftp_server);
+$login_result = ftp_login($ftp_connection, $ftp_username, $ftp_password);
+
+//Verificando se houve a conexão
+if ((!$ftp_connection) || (!$login_result)) {
+    echo "<script>alert('Falha ao conectar com o servidor FTP!!');</script>";
+    exit;
+}
+
+//Configurações de upload
+$local_file_path = "C:\xampp\htdocs\cloudbistec";
+$remote_file_path = "public_html/web";
+
+
+
+//Fazendo o upload do arquivo
+if (ftp_put($ftp_connection, "$remote_file_path", "$local_file_path", FTP_BINARY)) {
+    echo "<script>alert('Arquivo enviado com sucesso!!');</script>";
+} else{
+    echo "<script>alert('Falha ao enviar o arquivo!!');</script>";
+}
+    
+//Finalizando conexão com o servidor FTP
+ftp_close($ftp_connection);

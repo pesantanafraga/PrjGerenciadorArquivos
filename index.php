@@ -1,12 +1,12 @@
 <?php
-include('conexao.php');
+include('db.php');
 
 if(isset($_POST['username']) || isset($_POST['senha'])){
     if(strlen($_POST['username']) == 0){
-        echo "Preencha seu username!";
+        echo "<script>alert('Preencha seu username!');</script>";
     }
     else if(strlen($_POST['senha']) == 0){
-        echo "Preencha sua senha!";
+        echo "<script>alert('Preencha sua senha!');</script>";
     }
     else {
         $username = $mysqli->real_escape_string($_POST['username']);
@@ -30,7 +30,7 @@ if(isset($_POST['username']) || isset($_POST['senha'])){
            header("Location: painel.php");
         }
         else{
-            echo "Username e/ou senha incorretos!";
+            echo "<script>alert('Username e/ou senha incorretos!!');</script>";
         }
     }
 } 
@@ -43,22 +43,25 @@ if(isset($_POST['username']) || isset($_POST['senha'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bistec Cloud - Técnicos</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <h1>Bistec Cloud - Técnicos</h1>
     
+    <div class="index">
+    
     <form action="" method="POST">
         <p>
-        <label>Username</label>
-        <input type="text" name="username">
+        <input type="text" name="username" placeholder="USUÁRIO">
         </p>
 
         <p>
-        <label>Senha</label>
-        <input type="password" name="senha">
+        <input type="password" name="senha" placeholder="SENHA">
         </p>
 
         <button type="submit">Entrar</button>
     </form>
+    </div>
 </body>
 </html>
