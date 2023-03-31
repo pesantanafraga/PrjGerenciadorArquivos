@@ -13,6 +13,16 @@ include('protect.php');
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+    <nav class="menu-container">
+            <a href="painel.php">
+                <img src="./arquivos/Principal.png" alt="Logotipo da Bistec" width="200px">
+            </a>
+    
+            <a href="download.php">Enviar</a>
+        
+            <a href="logout.php">Sair</a> 
+    </nav>
+
     <h1>Gerenciador de Arquivos Externo Bistec</h1>
     <span class="bemvindo">Seja bem vindo, <?php echo $_SESSION['username']; ?> </span>
 
@@ -24,9 +34,8 @@ include('protect.php');
     </form>
 
     <div class="arquivos-container">
-        <span class="aviso">Para baixar um arquivo basta clicar nele.</span>
+        
     </div>
 
-    <p><a href="logout.php">Sair</a></p>
 </body>
 </html>

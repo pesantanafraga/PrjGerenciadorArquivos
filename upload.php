@@ -1,42 +1,52 @@
 <?php
 
-$arquivos = $_FILES['file'];
-$names = $arquivos['name'];
-$tmp_name = $arquivos['tmp_name'];
-
-foreach ($names as $index => $name) {
-    $extension = pathinfo($name, PATHINFO_EXTENSION);
-    $newNome = uniqid().'.'.$extension;
-    move_uploaded_file($tmp_name[$index],'$remote_file_path'.$newNome);
-}
+function connectFTP() {
 
 //Configurações de conexão FTP
-$ftp_server = 'ftp.bistec.com.pt';
-$ftp_username = 'web@bistec.com.pt';
-$ftp_password = '@bart7931';
+    $ftp_server = 'ftp.bistec.com.pt';
+    $ftp_username = 'web@bistec.com.pt';
+    $ftp_password = '@bart7931';
+    $port = 21;
+    $timeout = 9000;
 
-//Conectando ao servidor FTP
-$ftp_connection = ftp_connect($ftp_server);
-$login_result = ftp_login($ftp_connection, $ftp_username, $ftp_password);
+    $ftp = ftp_connect($ftp_server, $port , $timeout) or die("<script>alert('Falha ao se conectar com o servidor FTP!');</script>");
 
-//Verificando se houve a conexão
-if ((!$ftp_connection) || (!$login_result)) {
-    echo "<script>alert('Falha ao conectar com o servidor FTP!!');</script>";
-    exit;
+
+    $login = ftp_login($ftp, $ftp_username, $ftp_password);
+    if(!$login){
+        echo "<script>alert('Falha ao se credenciar com o servidor FTP!');</script>";
+    }
+
 }
 
-//Configurações de upload
-$local_file_path = "C:\xampp\htdocs\cloudbistec";
-$remote_file_path = "public_html/web";
 
+function uploadFile($localFile, $remoteFile) {
 
-
-//Fazendo o upload do arquivo
-if (ftp_put($ftp_connection, "$remote_file_path", "$local_file_path", FTP_BINARY)) {
-    echo "<script>alert('Arquivo enviado com sucesso!!');</script>";
-} else{
-    echo "<script>alert('Falha ao enviar o arquivo!!');</script>";
-}
+    $localFile = "$_FILES";
+    $remoteFile = "public_html/web";
     
-//Finalizando conexão com o servidor FTP
-ftp_close($ftp_connection);
+    $ftp = $this->connectFTP();
+
+    if(!is_resource($ftp)){
+        return false;
+    }
+
+    if(!is_file($localFile)){
+        return false;
+        echo "<script>alert('Arquivo de origem '{$localFile}' não existe!');</script>";
+    }
+
+    ftp_pasv($ftp, true);
+
+    //Fazendo upload do arquivo
+    $upload = ftp_put($ftp, $remoteFile, $localFile, FTP_BINARY);
+    if($upload){
+        echo "<script>alert('Arquivo enviado com sucesso =)');</script>";
+    }
+    else {
+        echo "<script>alert('Falha ao enviar o arquivo!');</script>";
+    }
+
+    ftp_close($ftp);
+    return true;
+}

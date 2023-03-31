@@ -5,6 +5,13 @@ h1{
     text-align: center;
     color: #fff;
 }
+a{
+    color: #fff;
+    font-size: large;
+    font-weight: 500;
+    font-family: sans-serif;
+    font-display: none;
+}
 input{
     font-size: larger;
     width: 15rem;
@@ -42,4 +49,12 @@ button:hover{
     padding: 1.5%;
     color: #fff;
 
+}
+.menu-container{
+    background-color: black;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #fff;
 }
