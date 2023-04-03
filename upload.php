@@ -1,52 +1,37 @@
 <?php
+// Configuração de conexão FTP
+$ftp_server = "ftp.bistec.com.pt";
+$ftp_user = "web@bistec.com.pt";
+$ftp_pass = "@bart7931";
+$conn_id = ftp_connect($ftp_server);
+ftp_login($conn_id, $ftp_user, $ftp_pass);
 
-function connectFTP() {
-
-//Configurações de conexão FTP
-    $ftp_server = 'ftp.bistec.com.pt';
-    $ftp_username = 'web@bistec.com.pt';
-    $ftp_password = '@bart7931';
-    $port = 21;
-    $timeout = 9000;
-
-    $ftp = ftp_connect($ftp_server, $port , $timeout) or die("<script>alert('Falha ao se conectar com o servidor FTP!');</script>");
-
-
-    $login = ftp_login($ftp, $ftp_username, $ftp_password);
-    if(!$login){
-        echo "<script>alert('Falha ao se credenciar com o servidor FTP!');</script>";
+// Upload de arquivo
+if(isset($_POST['submit'])){
+    $target_dir = "/";
+    $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+    $uploadOk = 1;
+    if (ftp_put($conn_id, $target_file, $_FILES["fileToUpload"]["tmp_name"], FTP_BINARY)) {
+        echo "<script>alert('Arquivos enviados com sucesso!');</script>";
+    } else {
+        echo "Ocorreu um erro ao enviar o arquivo.";
     }
-
 }
 
+?>
 
-function uploadFile($localFile, $remoteFile) {
-
-    $localFile = "$_FILES";
-    $remoteFile = "public_html/web";
-    
-    $ftp = $this->connectFTP();
-
-    if(!is_resource($ftp)){
-        return false;
-    }
-
-    if(!is_file($localFile)){
-        return false;
-        echo "<script>alert('Arquivo de origem '{$localFile}' não existe!');</script>";
-    }
-
-    ftp_pasv($ftp, true);
-
-    //Fazendo upload do arquivo
-    $upload = ftp_put($ftp, $remoteFile, $localFile, FTP_BINARY);
-    if($upload){
-        echo "<script>alert('Arquivo enviado com sucesso =)');</script>";
-    }
-    else {
-        echo "<script>alert('Falha ao enviar o arquivo!');</script>";
-    }
-
-    ftp_close($ftp);
-    return true;
-}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload - Files</title>
+</head>
+<body>
+    <?php
+        header('Refresh: 2, URL=painel.php');
+        echo "Redirecionando para o Painel.";
+    ?>
+</body>
+</html>

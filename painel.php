@@ -13,25 +13,22 @@ include('protect.php');
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <nav class="menu-container">
-            <a href="painel.php">
-                <img src="./arquivos/Principal.png" alt="Logotipo da Bistec" width="200px">
-            </a>
-    
-            <a href="download.php">Enviar</a>
-        
-            <a href="logout.php">Sair</a> 
-    </nav>
+<header>
+        <nav class="menu">
+            <a href="painel.php">Logotipo</a>
+            <a href="download.php">Downloads</a>
+            <a href="logout.php">Sair</a>
+        </nav>
 
-    <h1>Gerenciador de Arquivos Externo Bistec</h1>
-    <span class="bemvindo">Seja bem vindo, <?php echo $_SESSION['username']; ?> </span>
+        <h1>Cloud Bistec - Início</h1>
+        <h3>Olá, <?php echo $_SESSION['nome'] ?></h3>
+    </header>
 
-    <form action='upload.php' method="post" enctype="multipart/form-data">
-
-        <input type="file" name="file[]" multiple>
-        <input type="submit" value="Enviar">
-
-    </form>
+    <h2>Enviar arquivo:</h2>
+<form action="upload.php" method="post" enctype="multipart/form-data">
+  <input type="file" name="fileToUpload" id="fileToUpload" multiple>
+  <input type="submit" value="Enviar" name="submit">
+</form>
 
     <div class="arquivos-container">
         

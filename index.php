@@ -1,39 +1,48 @@
 <?php
-include('db.php');
 
-if(isset($_POST['username']) || isset($_POST['senha'])){
-    if(strlen($_POST['username']) == 0){
-        echo "<script>alert('Preencha seu username!');</script>";
-    }
-    else if(strlen($_POST['senha']) == 0){
-        echo "<script>alert('Preencha sua senha!');</script>";
-    }
-    else {
-        $username = $mysqli->real_escape_string($_POST['username']);
-        $senha = $mysqli->real_escape_string($_POST['senha']);
+include('database.php');
 
+if(isset($_POST['username']) || isset($_POST['senha'])) {
+    
+    //tratando erros de login faltando informação
+    if(strlen($_POST['username']) == 0) {
+        echo "<script>alert('Informe seu username!!!');</script>";
+    }
+    else if(strlen($_POST['senha']) == 0) {
+        echo "<script>alert('Informe sua senha!!!');</script>";
+    }
+    else{
+        $username = $connect->real_escape_string($_POST['username']);
+        $senha = $connect->real_escape_string($_POST['senha']);
+
+        //fazendo a busca no banco
         $sql_code = "SELECT * FROM usuario WHERE username = '$username' AND senha = '$senha'";
-        $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL: " . $mysqli->error);
+        //trazendo a informação através da query, caso erro será informado
+        $sql_query = $connect->query($sql_code) or die("<script>alert('Falha na execução do código SQL!!!');</script>". $connect->error);
 
+        //trazendo o leitor para ler o banco
         $quantidade = $sql_query->num_rows;
 
         if($quantidade == 1){
-           $username = $sql_query->fetch_assoc(); 
+            $username = $sql_query->fetch_assoc();
 
-           if(!isset($_SESSION)){
-            session_start();
-           }
-
-           $_SESSION['id'] = $username['id'];
-           $_SESSION['username'] = $username['username'];
-
-           header("Location: painel.php");
+            if(!isset($_SESSION)){
+                session_start();
+            }
         }
-        else{
-            echo "<script>alert('Username e/ou senha incorretos!!');</script>";
-        }
+
+        $_SESSION['id'] = $username['id'];
+        $_SESSION['nome'] = $username['nome'];
+        $_SESSION['username'] = $username['username'];
+
+        header("Location: painel.php");
     }
-} 
+
+}else{
+        echo "<script>alert('Username e/ou senha incorretos!!');</script>";
+    }            
+
+
 ?>
 
 <!DOCTYPE html>
@@ -47,21 +56,18 @@ if(isset($_POST['username']) || isset($_POST['senha'])){
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <h1>Bistec Cloud - Técnicos</h1>
     
-    <div class="index">
-    
-    <form action="" method="POST">
-        <p>
-        <input type="text" name="username" placeholder="USUÁRIO">
-        </p>
+    <form action="" method="post">
 
-        <p>
-        <input type="password" name="senha" placeholder="SENHA">
-        </p>
+        <div class="container-index">
 
-        <button type="submit">Entrar</button>
+            <input type="text" name="username" placeholder="USUÁRIO">
+            <input type="password" name="senha" placeholder="SENHA">
+            <button type="submit">Entrar</button>
+
+        </div>
+
     </form>
-    </div>
+
 </body>
 </html>
