@@ -6,6 +6,7 @@ $ftp_pass = "@bart7931";
 $conn_id = ftp_connect($ftp_server);
 ftp_login($conn_id, $ftp_user, $ftp_pass);
 
+
 // Upload de arquivo
 if(isset($_POST['submit'])){
     $target_dir = "/";
@@ -30,8 +31,8 @@ if(isset($_POST['submit'])){
 </head>
 <body>
     <?php
-        header('Refresh: 2, URL=painel.php');
-        echo "Redirecionando para o Painel.";
+        header("Refresh:1, URL=painel.php");
+        echo "Redirecionando para o painel...";
     ?>
 </body>
 </html>
