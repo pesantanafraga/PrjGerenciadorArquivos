@@ -16,7 +16,7 @@ include('protect.php');
 <header>
         <nav class="menu">
             <a href="painel.php">Logotipo</a>
-            <a href="downloads.php">Downloads</a>
+            <a href="arquivos.php">Arquivos</a>
             <a href="logout.php">Sair</a>
         </nav>
 
@@ -27,12 +27,12 @@ include('protect.php');
     <h2>Enviar arquivo:</h2>
 <form action="upload.php" method="post" enctype="multipart/form-data">
   <input type="file" name="fileToUpload" id="fileToUpload" multiple>
+
   <input type="submit" value="Enviar" name="submit">
 </form>
 
-    <div class="arquivos-container">
-        
-    </div>
-
+    <footer>
+        <span></span>
+    </footer>
 </body>
 </html>
