@@ -26,23 +26,20 @@ include('ftpCredenciais.php');
     <div class="arquivos">
         <?php
             
-            // Definir o diretório que será listado
-            $dir = "https://bistec.com.pt/web/";
-            // Verificar se o diretório existe
-            if (is_dir($dir)) {         
-            // Obter uma lista de arquivos e pastas no diretório
-            $files = scandir($dir);
-
-            // Remover "." e ".." da lista de arquivos
-            $files = array_diff($files, array(".", ".."));
-
-            // Loop pelos arquivos
-            foreach ($files as $file) {
-            // Exibir o nome do arquivo com um link para download
-            echo "<a href=\"{$dir}/{$file}\" download>{$file}</a><br>";
+            //informando o diretorio e indo até ele
+            $remote_dir = "";
+            ftp_chdir($conn_id, $remote_dir);
+            
+            //obtendo a lista dos arquivos e pastas dentro do diretório
+            $files = ftp_nlist($conn_id, $remote_dir);
+            
+            //exibindo a lista de arquivos e pastas e permitindo que possa fazer o download
+            foreach($files as $file) {
+            // Ignora os diretórios "." e ".."
+            if($file == "." || $file == "..") {
+                continue;
             }
-            } else {
-            echo "O diretório não existe.";
+                echo "<a href=\"download.php?file=" . urlencode($file) . "\">" . $file . "</a><br>";
             }
 
         ?>
