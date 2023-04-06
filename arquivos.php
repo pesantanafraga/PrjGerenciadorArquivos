@@ -27,7 +27,7 @@ include('ftpCredenciais.php');
         <?php
             
             //informando o diretorio e indo até ele
-            $remote_dir = "";
+            $remote_dir = "./";
             ftp_chdir($conn_id, $remote_dir);
             
             //obtendo a lista dos arquivos e pastas dentro do diretório
