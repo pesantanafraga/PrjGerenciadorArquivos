@@ -1,9 +1,10 @@
 <?php
 
-include('ftpCredenciais.php');
-include('arquivos.php');
+require 'ftpCredenciais.php';
 
 ftp_pasv($conn_id, true);
+
+$remote_dir = "/";
 
 //criando o script de download
 $file = $_GET["file"];

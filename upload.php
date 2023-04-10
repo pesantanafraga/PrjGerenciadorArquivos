@@ -15,6 +15,8 @@ if(isset($_POST['submit'])){
     }
 }
 
+ftp_close($conn_id);
+
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +29,7 @@ if(isset($_POST['submit'])){
 </head>
 <body>
     <?php
-        header("Refresh:1, URL=painel.php");
+        header("Refresh:0, URL=painel.php");
         echo "Redirecionando para o painel...";
     ?>
 </body>

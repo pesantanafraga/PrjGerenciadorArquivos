@@ -4,9 +4,7 @@
     }
 
     if(!isset($_SESSION['id'])){
-        die("<script>alert('Acesso Restrito. Somente usuários credenciados!!!');</script> <p><a href=\"index.php\">Entrar</a></p>");
+        die("<script>alert('Acesso Restrito. Somente usuários credenciados!!!');</script>" . header("refresh:0;url=index.php"));
         
-        header("refresh:5;url=index.php");
-        echo "Você será redirecionado em 5 segundos...";
     }
 
