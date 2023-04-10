@@ -11,28 +11,19 @@ include('protect.php');
     <title>Repositório - Bistec</title>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
+    <script src="https://example.com/fontawesome/v5.15.4/js/all.js" data-auto-a11y="true" ></script>
 </head>
 <body>
-<header>
-        <nav class="menu">
-            <a href="painel.php">Logotipo</a>
-            <a href="arquivos.php">Arquivos</a>
-            <a href="logout.php">Sair</a>
-        </nav>
 
+    <?php include('header.php'); ?>
+    <div class="containerpainel">
         <h1>Repositório Bistec - Início</h1>
         <h3>Olá, <?php echo $_SESSION['nome'] ?></h3>
-    </header>
-
-    <h2>Enviar arquivo:</h2>
-<form action="upload.php" method="post" enctype="multipart/form-data">
-  <input type="file" name="fileToUpload" id="fileToUpload" multiple>
-
-  <input type="submit" value="Enviar" name="submit">
-</form>
-
-    <footer>
-        <span></span>
-    </footer>
+        <h2>Enviar arquivo:</h2>
+        <form action="upload.php" method="post" enctype="multipart/form-data">
+            <input type="file" name="fileToUpload" id="fileToUpload" multiple>
+            <input type="submit" value="Enviar" name="submit">
+        </form>
+    </div>
 </body>
 </html>

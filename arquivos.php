@@ -11,17 +11,13 @@ require 'ftpCredenciais.php';
     <title>Arquivos</title>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
+    <script src="https://example.com/fontawesome/v5.15.4/js/all.js" data-auto-a11y="true" ></script>
 </head>
 <body>
-<header>
-        <nav class="menu">
-            <a href="painel.php">Logotipo</a>
-            <a href="arquivos.php">Arquivos</a>
-            <a href="logout.php">Sair</a>
-        </nav>
+    
+    <?php include('header.php'); ?>
 
-        <h1>Gerenciador de Arquivos</h1>
-    </header>
+    <h1>Gerenciador de Arquivos</h1>
 
     <div class="arquivos">
         <?php
@@ -52,5 +48,8 @@ require 'ftpCredenciais.php';
     <footer>
         <span></span>
     </footer>
+    
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Voltar para cima</button>
+    <script src="./js/main.js"></script>
 </body>
 </html>

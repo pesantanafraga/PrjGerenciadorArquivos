@@ -1,12 +1,48 @@
-body{
-    background-color: grey;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+body{
+    background: linear-gradient(45deg, #13578c, #4baf96);
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    width: 100%;
+    top: 0;
+    z-index: 1;
+    border-bottom: 1px solid #b3b3b3;
+    background: #f3fafa;
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.2);
+    position: fixed;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+}
+
 h1{
     text-align: center;
     color: #fff;
+    padding-top: 80px;
+    padding-bottom: 45px;
 }
 h2{
     color: #000;
+}
+
+.menu a {
+    color: #000;
+    font-size: 22px;
+    font-weight: 700;
+    padding: 0 70px;
 }
 a{
     text-decoration: none;
@@ -21,11 +57,10 @@ input{
 }
 button{
     font-size: large;
-    width: 8rem;
     border-radius: 5px;
     background: transparent;
     background-color: gray;
-    transition: background 0.8s;
+    transition: 0.8s;
     cursor: pointer;
 }
 button:hover{
@@ -39,17 +74,44 @@ button:hover{
     flex-direction: column;
     align-items: center;
 }
+
+#userinput, #psswdinput, button[type=submit] {
+    padding: 10px;
+    border: none;
+    color: #000;
+    outline: none;
+    background-color: rgb(255, 255, 255);
+}
+
+button[type=submit]:active {
+    background-color: rgb(222, 255, 244);
+}
+
+.containerpainel {
+    color: #fff;
+    max-width: 90%;
+}
+
+button[type=submit]:active {
+    background-color: rgb(188, 237, 220);
+}
+
+#userinput:focus, #psswdinput:focus {
+    outline: 2px solid #222;
+    background-color: rgb(222, 255, 244);
+}
+
 .container-index input{
     margin-bottom: 5%;
 }
-.menu{
+/* .menu{
     background-color: black;
     margin: 0 auto;
     display: flex;
     justify-content: space-around;
     align-items: center;
     color: #fff;
-}
+} */
 .menu a:hover{
     transition: color 0.8s;
     color: blue;
@@ -59,4 +121,36 @@ button:hover{
     margin: auto;
     flex-direction: column;
     flex-wrap: wrap;
+}
+
+.arquivos a {
+    font-size: 25px;
+    margin: 5px 0;
+}
+
+
+/* botão de voltar ao topo*/
+#myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: rgba(249, 249, 249, 0.5); /* Set a background color */
+    color: black; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    width: auto;
+    border-radius: 20px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+    box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+#myBtn:hover {
+    background-color: #d9d9d9; 
+}
+#myBtn:active {
+    background-color: #fff; /* Add a dark-grey background on hover */
 }

@@ -54,6 +54,7 @@ if(isset($_POST['username']) || isset($_POST['senha'])) {
     <title>Repositório Bistec</title>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
+    <script src="https://example.com/fontawesome/v5.15.4/js/all.js" data-auto-a11y="true" ></script>
 </head>
 <body>
     
@@ -63,8 +64,8 @@ if(isset($_POST['username']) || isset($_POST['senha'])) {
 
         <div class="container-index">
 
-            <input type="text" name="username" placeholder="USUÁRIO">
-            <input type="password" name="senha" placeholder="SENHA">
+            <input id="userinput" type="text" name="username" placeholder="Digite seu usuário:">
+            <input id="psswdinput" type="password" name="senha" placeholder="Digite sua senha:">
             <button type="submit">Entrar</button>
 
         </div>
