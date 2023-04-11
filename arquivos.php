@@ -2,22 +2,11 @@
 require 'ftpCredenciais.php';
 ?>
 
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arquivos</title>
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <script src="https://example.com/fontawesome/v5.15.4/js/all.js" data-auto-a11y="true" ></script>
-</head>
+<?php include('headtemplate.php'); ?>
 <body>
-    
     <?php include('header.php'); ?>
-
-    <h1>Gerenciador de Arquivos</h1>
+    <h1>Gerenciador de Arquivos <span class="iconify" data-icon="ic:baseline-file-download" style="color: white; font-size: 35px;"></span>
+</h1>
 
     <div class="arquivos">
         <?php
@@ -44,12 +33,9 @@ require 'ftpCredenciais.php';
             ftp_close($conn_id);
         ?>
     </div>
-
-    <footer>
-        <span></span>
-    </footer>
     
     <button onclick="topFunction()" id="myBtn" title="Go to top">Voltar para cima</button>
     <script src="./js/main.js"></script>
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
 </body>
 </html>

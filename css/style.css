@@ -9,6 +9,7 @@
 body{
     background: linear-gradient(45deg, #13578c, #4baf96);
     font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
 }
 
 header {
@@ -28,11 +29,17 @@ header nav {
     align-items: center;
 }
 
+header nav:first-child {
+    margin-top: 4px;
+}
+
 h1{
     text-align: center;
     color: #fff;
     padding-top: 80px;
     padding-bottom: 45px;
+    font-size: 30px;
+    font-weight: 800;
 }
 h2{
     color: #000;
@@ -42,12 +49,11 @@ h2{
     color: #000;
     font-size: 22px;
     font-weight: 700;
-    padding: 0 70px;
+    margin: 0 40px;
 }
 a{
     text-decoration: none;
     color: #fff;
-    font-size: xx-large;
     text-align: center;
 }
 input{
@@ -90,6 +96,65 @@ button[type=submit]:active {
 .containerpainel {
     color: #fff;
     max-width: 90%;
+    margin: auto;
+}
+
+.containerpainel h1, .containerpainel h2, .containerpainel h3, .containerpainel form{
+    text-align: center;
+    margin: auto;
+}
+
+#botaosubmit {
+    background: #fff;
+    padding: 5px 10px;
+    font-weight: 800;
+    font-size: 25px;
+}
+
+.containerpainel h2 {
+    font-weight: 700;
+    color: white;
+    font-size: 24px;
+}
+
+.containerpainel h3 {
+    font-size: 26px;
+}
+
+.containerpainel form input{
+    width: auto;
+}
+
+.containerpainel form button:last-child{
+    display: none;
+}
+
+.containerutilidades {
+    text-align: center;
+    max-width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.containerutilidades p {
+    margin: 8px 0;
+    text-align: left;
+    font-size: 20px;
+    text-decoration: underline;
+    text-decoration-color: white;
+    text-decoration-thickness: 1.5px;
+}
+
+.containerutilidades .abas {
+    margin: 45px;
+}
+
+.containerutilidades h2 {
+    font-size: 30px;
+    font-weight: 600;
+    color: #000;
+    margin: 0;
 }
 
 button[type=submit]:active {
