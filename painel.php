@@ -28,15 +28,15 @@ include('protect.php');
     <div class="containerutilidades">
         <h3>Links úteis</h3>
         <nav>
-            <a href="http://repositorio.futurasistemas.com.br/">REPOSITÓRIO FUTURA</a>
-            <a href="https://revendas.smallsoft.com.br/login">SUPORTE SMALLSOFT</a>
-            <a href="https://portal.hiper.com.br/#/">HIPERADOR</a>
-            <a href="https://ajuda.hiper.com.br/hc/pt-br">AJUDA HIPER</a>
-            <a href="http://parceiros.cplug.com.br/">PAINEL REVENDA CPLUG</a>
-            <a href="https://bistec.backupmanager.info/login">BISTEC CLOUD</a>
-            <a href="eformsnfce.e-datacenter.nddigi...2%2000%3A00%3A00&StoreId=0">MONITOR PORTAL POS CONTROLE</a>
-            <a href="eformsnfce.e-datacenter.nddigi...eColdweb/ProcessDocument/Index">COLDWEB PORTAL POS CONTROLE</a>
-            <a href="painel.hotspotsocial.xyz">PAINEL BISTEC WIFI</a>
+            <a href="http://repositorio.futurasistemas.com.br/" target="_blank">REPOSITÓRIO FUTURA</a>
+            <a href="https://revendas.smallsoft.com.br/login" target="_blank">SUPORTE SMALLSOFT</a>
+            <a href="https://portal.hiper.com.br/#/" target="_blank">HIPERADOR</a>
+            <a href="https://ajuda.hiper.com.br/hc/pt-br" target="_blank">AJUDA HIPER</a>
+            <a href="http://parceiros.cplug.com.br/" target="_blank">PAINEL REVENDA CPLUG</a>
+            <a href="https://bistec.backupmanager.info/login" target="_blank">BISTEC CLOUD</a>
+            <a href="https://eformsnfce.e-datacenter.nddigital.com.br/eForms_NFCeeMonitor/Account/Login" target="_blank">MONITOR PORTAL POS CONTROLE</a>
+            <a href="https://eformsnfce.e-datacenter.nddigital.com.br/eForms_NFCeColdweb/Account/Login" target="_blank">COLDWEB PORTAL POS CONTROLE</a>
+            <a href="painel.hotspotsocial.xyz" target="_blank">PAINEL BISTEC WIFI</a>
         </nav>
     </div>
     
