@@ -1,6 +1,6 @@
 <?php
 
-$server_host = "br912.hostgator.com.br";
+$server_host = "localhost";
 $username = "bistec_admin";
 $senha = "cloudbistec7931";
 $dbname = "bistec_cloud";
