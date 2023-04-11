@@ -11,7 +11,7 @@ if(isset($_POST['submit'])){
     if (ftp_put($conn_id, $target_file, $_FILES["fileToUpload"]["tmp_name"], FTP_BINARY)) {
         echo "<script>alert('Arquivos enviados com sucesso!');</script>";
     } else {
-        echo "Ocorreu um erro ao enviar o arquivo.";
+        echo "<script>alert('Ocorreu um erro ao enviar o arquivo!');</script>";
     }
 }
 
