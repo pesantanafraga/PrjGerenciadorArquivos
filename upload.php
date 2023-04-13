@@ -19,18 +19,10 @@ ftp_close($conn_id);
 
 ?>
 
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upload - Files</title>
-</head>
+<?php include('headtemplate.php'); ?>
 <body>
     <?php
-        header("Refresh:0, URL=painel.php");
-        echo "Redirecionando para o painel...";
+        echo '<h1><a href="painel.php" style="text-decoration: underline;">Voltar para o painel</a></h1>    ';
     ?>
 </body>
 </html>

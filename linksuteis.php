@@ -12,7 +12,7 @@ include('protect.php');
             <div class="abas">
                 <h2>Futura Sistemas</h2>
                 <p><a href="http://repositorio.futurasistemas.com.br/" target="_blank"><span class="iconify" data-icon="ph:link-simple-bold" style="color: white;"></span> Repositório Futura Sistemas</a></p>
-                <p><a href="https://manual.futurasistemas.com.br/referencias/referencias-dos-conteudos/"><span class="iconify" data-icon="ph:link-simple-bold" style="color: white;"></span> Manuais Futura Sistemas</a></p>
+                <p><a href="https://manual.futurasistemas.com.br/referencias/referencias-dos-conteudos/" target="_blank"><span class="iconify" data-icon="ph:link-simple-bold" style="color: white;"></span> Manuais Futura Sistemas</a></p>
             </div>
 
             <div class="abas">
