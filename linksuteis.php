@@ -40,7 +40,8 @@ include('protect.php');
             <div class="abas">
                 <h2>POS Controle</h2>
                 <p><a href="https://eformsnfce.e-datacenter.nddigital.com.br/eForms_NFCeeMonitor/Account/Login" target="_blank"><span class="iconify" data-icon="ph:link-simple-bold" style="color: white;"></span> Monitor portal POS Controle</a></p>
-                <p><a href="https://eformsnfce.e-datacenter.nddigital.com.br/eForms_NFCeColdweb/Account/Login" target="_blank"><span class="iconify" data-icon="ph:link-simple-bold" style="color: white;"></span> Coldweb portal POS Controle</a></p>    
+                <p><a href="https://eformsnfce.e-datacenter.nddigital.com.br/eForms_NFCeColdweb/Account/Login" target="_blank"><span class="iconify" data-icon="ph:link-simple-bold" style="color: white;"></span> Coldweb portal POS Controle</a></p>
+                <p><a href="https://bistec.pdv.mobi/POSAuth/">Painel POS Controle</a></p>    
             </div>
 
             <div class="abas">
