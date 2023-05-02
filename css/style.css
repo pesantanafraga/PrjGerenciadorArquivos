@@ -72,6 +72,14 @@ button{
 button:hover{
     background: blue;
 }
+
+.logo {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
 .container-index{
     display: flex;
     margin: 10%;

@@ -1,6 +1,4 @@
-<?php
-
-include('database.php');
+<?php include('database.php'); 
 
 if(isset($_POST['username']) || isset($_POST['senha'])) {
     
@@ -38,11 +36,10 @@ if(isset($_POST['username']) || isset($_POST['senha'])) {
         header("Location: painel.php");
     }
 
-}else{
+}
+else{
         echo "<script>alert('Username e/ou senha incorretos!!');</script>";
     }            
-
-
 ?>
 
 <?php include('headtemplate.php'); ?>
@@ -51,6 +48,9 @@ if(isset($_POST['username']) || isset($_POST['senha'])) {
     <form action="" method="post">
 
     <h1>Repositório Bistec - Técnicos</h1>
+    <div class="logo" style="display: flex; justify-content: center;">
+        <a href="https://bistec.com.br"><img src="https://ik.imagekit.io/bistecbr/bistec_logobranco.png" alt="Logo Bistec" width="300" height="102"></a>
+    </div>
 
         <div class="container-index">
 
