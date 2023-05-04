@@ -9,7 +9,7 @@
 body{
     background: linear-gradient(45deg, #13578c, #4baf96);
     font-family: 'Poppins', sans-serif;
-    min-height: 100vh;
+    margin-top: 100px;
 }
 
 header {
@@ -36,7 +36,7 @@ header nav:first-child {
 h1{
     text-align: center;
     color: #fff;
-    padding-top: 80px;
+    padding-top: 10px;
     padding-bottom: 45px;
     font-size: 30px;
     font-weight: 800;
@@ -226,4 +226,27 @@ button[type=submit]:active {
 }
 #myBtn:active {
     background-color: #fff; /* Add a dark-grey background on hover */
+}
+
+/* footer */
+
+.footer {
+    background-color: #24262b;
+    margin-top: 90px;
+} 
+
+.footer h3 {
+    font-size: 20px;
+    color: #fff;
+    padding: 2px 2px 10px 0;
+}
+
+footer .container {
+    max-width: 80%;
+    margin: auto;
+}
+
+.row {
+    display: flex;
+    justify-content: space-around;
 }

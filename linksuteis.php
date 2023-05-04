@@ -60,8 +60,7 @@ include('protect.php');
             </div>
     </div>
 
-    
-    
+    <?php include('footer.php'); ?>
     <button onclick="topFunction()" id="myBtn" title="Go to top">Voltar para cima</button>
     <script src="./js/main.js"></script>
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
