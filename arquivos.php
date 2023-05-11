@@ -34,8 +34,8 @@ require 'ftpCredenciais.php';
         ?>
     </div>
     
-    <?php include('footer.php'); ?>
     <button onclick="topFunction()" id="myBtn" title="Go to top">Voltar para cima</button>
+    <?php include('footer.php'); ?>
     <script src="./js/main.js"></script>
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
 </body>
